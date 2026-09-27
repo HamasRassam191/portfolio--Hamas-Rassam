@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>حماس   رسام | متخصصة التقنية والإبداع</title>
+
+    <meta
+        name="description"
+        content="البورتفوليو الشخصي لحماس عادل أحمد رسام - متخصصة التقنية والإبداع"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+
+                    boxShadow: {
+                        glow: '0 0 45px rgba(139,92,246,.18)',
+                        glowPink: '0 0 45px rgba(236,72,153,.16)'
+                    },
+
+                    animation: {
+                        float: 'float 5s ease-in-out infinite',
+                        pulseSoft: 'pulseSoft 3s ease-in-out infinite'
+                    },
+
+                    keyframes: {
+                        float: {
+                            '0%,100%': {
+                                transform: 'translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'translateY(-12px)'
+                            }
+                        },
+
+                        pulseSoft: {
+                            '0%,100%': {
+                                opacity: '.5'
+                            },
+                            '50%': {
+                                opacity: '1'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(124, 58, 237, .10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(236, 72, 153, .08),
+                    transparent 30%
+                ),
+                #fafafa;
+            transition:
+                background .35s ease,
+                color .35s ease;
+        }
+
+        .dark body {
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(124, 58, 237, .13),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(236, 72, 153, .09),
+                    transparent 30%
+                ),
+                #020617;
+        }
+
+        ::selection {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(
+                #8b5cf6,
+                #ec4899
+            );
+            border-radius: 20px;
+        }
+
+        .glass {
+            background: rgba(255,255,255,.72);
+            border: 1px solid rgba(148,163,184,.22);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .dark .glass {
+            background: rgba(15,23,42,.68);
+            border-color: rgba(148,163,184,.15);
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(
+                    rgba(139,92,246,.055) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(139,92,246,.055) 1px,
+                    transparent 1px
+                );
+            background-size: 42px 42px;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    120deg,
+                    #7c3aed,
+                    #ec4899,
+                    #6366f1
+                );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-border {
+            position: relative;
+        }
+
+        .gradient-border::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: inherit;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,.55),
+                    rgba(236,72,153,.35),
+                    transparent
+                );
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity .75s ease,
+                transform .75s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                opacity .25s ease,
+                visibility .25s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-panel {
+            transform: translateY(25px) scale(.97);
+            transition: transform .3s ease;
+        }
+
+        .modal.active .modal-panel {
+            transform: translateY(0) scale(1);
+        }
+
+        .loader {
+            transition:
+                opacity .5s ease,
+                visibility .5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .nav-link.active {
+            color: #8b5cf6;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -7px;
+            height: 2px;
+            width: 0;
+            border-radius: 10px;
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #ec4899
+            );
+            transition: width .3s ease;
+        }
+
+        .project-card {
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 25px 70px rgba(15,23,42,.12);
+        }
+
+        .dark .project-card:hover {
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.3);
+        }
+
+        .skill-card {
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .toast {
+            transform: translateY(100px);
+            opacity: 0;
+            pointer-events: none;
+            transition:
+                transform .35s ease,
+                opacity .35s ease;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .command-item.active {
+            background: rgba(139,92,246,.12);
+        }
+
+        .cursor-glow {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            pointer-events: none;
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,.08),
+                    transparent 65%
+                );
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .cursor-glow {
+                display: none;
+            }
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 dark:text-slate-100">
+
+    <!-- Cursor Glow -->
+    <div id="cursorGlow" class="cursor-glow"></div>
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -left-40 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-1/3 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Loader -->
+    <div
+        id="loader"
+        class="loader fixed inset-0 z-[100] flex items-center justify-center bg-white dark:bg-slate-950"
+    >
+        <div class="text-center">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl flex items-center justify-center
+                bg-gradient-to-br from-violet-600 to-pink-500
+                text-white text-3xl font-extrabold shadow-glow animate-pulse"
+            >
+                H
+            </div>
+
+            <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">
+                جاري تحميل البورتفوليو...
+            </p>
+
+            <div class="w-40 h-1 bg-slate-200 dark:bg-slate-800 rounded-full mt-4 overflow-hidden">
+                <div class="h-full w-1/2 bg-gradient-to-r from-violet-600 to-pink-500 rounded-full animate-pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div
+        id="scrollProgress"
+        class="fixed top-0 right-0 z-[90] h-1 w-0
+        bg-gradient-to-l from-violet-600 via-fuchsia-500 to-pink-500"
+    ></div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header
+        id="header"
+        class="fixed top-0 right-0 left-0 z-50 transition-all duration-300"
+    >
+        <div
+            id="headerInner"
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+        >
+
+            <div
+                class="glass rounded-2xl px-4 sm:px-6 py-3
+                flex items-center justify-between shadow-sm"
+            >
+
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3">
+
+                    <div
+                        class="w-11 h-11 rounded-xl
+                        bg-gradient-to-br from-violet-600 to-pink-500
+                        text-white flex items-center justify-center
+                        font-extrabold text-xl shadow-lg"
+                    >
+                        H
+                    </div>
+
+                    <div class="hidden sm:block">
+                        <div class="font-extrabold text-sm">
+                            حماس  رسام
+                        </div>
+
+                        <div class="text-xs text-slate-500 dark:text-slate-400">
+                            التقنية والإبداع
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-7">
+
+                    <a
+                        href="#home"
+                        data-section="home"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600 active"
+                    >
+                        الرئيسية
+                    </a>
+
+                    <a
+                        href="#about"
+                        data-section="about"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600"
+                    >
+                        نبذة عني
+                    </a>
+
+                    <a
+                        href="#skills"
+                        data-section="skills"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600"
+                    >
+                        المهارات
+                    </a>
+
+                    <a
+                        href="#projects"
+                        data-section="projects"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600"
+                    >
+                        المشاريع
+                    </a>
+
+                    <a
+                        href="#services"
+                        data-section="services"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600"
+                    >
+                        الخدمات
+                    </a>
+
+                    <a
+                        href="#contact"
+                        data-section="contact"
+                        class="nav-link relative text-sm font-semibold transition hover:text-violet-600"
+                    >
+                        تواصل معي
+                    </a>
+
+                </nav>
+
+
+                <!-- Actions -->
+                <div class="flex items-center gap-2">
+
+                    <!-- Command -->
+                    <button
+                        id="commandButton"
+                        aria-label="فتح البحث"
+                        class="hidden sm:flex w-10 h-10 rounded-xl items-center justify-center
+                        bg-slate-100 dark:bg-slate-800
+                        hover:bg-violet-100 dark:hover:bg-violet-900/30
+                        transition"
+                    >
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="m20 20-3.5-3.5"/>
+                        </svg>
+                    </button>
+
+
+                    <!-- Theme -->
+                    <button
+                        id="themeToggle"
+                        aria-label="تغيير المظهر"
+                        class="w-10 h-10 rounded-xl flex items-center justify-center
+                        bg-slate-100 dark:bg-slate-800
+                        hover:bg-violet-100 dark:hover:bg-violet-900/30
+                        transition"
+                    >
+                        <svg
+                            id="sunIcon"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            class="hidden"
+                        >
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2"/>
+                            <path d="M12 20v2"/>
+                            <path d="m4.93 4.93 1.41 1.41"/>
+                            <path d="m17.66 17.66 1.41 1.41"/>
+                            <path d="M2 12h2"/>
+                            <path d="M20 12h2"/>
+                            <path d="m6.34 17.66-1.41 1.41"/>
+                            <path d="m19.07 4.93-1.41 1.41"/>
+                        </svg>
+
+                        <svg
+                            id="moonIcon"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.5 6.5 0 0 0 21 12.8z"/>
+                        </svg>
+                    </button>
+
+
+                    <!-- Mobile Menu -->
+                    <button
+                        id="menuToggle"
+                        aria-label="فتح القائمة"
+                        class="lg:hidden w-10 h-10 rounded-xl flex items-center justify-center
+                        bg-slate-100 dark:bg-slate-800"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 6h16"/>
+                            <path d="M4 12h16"/>
+                            <path d="M4 18h16"/>
+                        </svg>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Mobile Navigation -->
+            <div
+                id="mobileMenu"
+                class="hidden lg:hidden mt-2 glass rounded-2xl p-3 shadow-xl"
+            >
+
+                <a href="#home" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    الرئيسية
+                </a>
+
+                <a href="#about" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    نبذة عني
+                </a>
+
+                <a href="#skills" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    المهارات
+                </a>
+
+                <a href="#projects" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    المشاريع
+                </a>
+
+                <a href="#services" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    الخدمات
+                </a>
+
+                <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl hover:bg-violet-500/10">
+                    تواصل معي
+                </a>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section
+            id="home"
+            class="relative min-h-screen flex items-center pt-32 pb-20 grid-bg"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+
+                <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+                    <!-- Hero Text -->
+                    <div class="reveal">
+
+                        <div
+                            class="inline-flex items-center gap-2
+                            px-4 py-2 rounded-full
+                            bg-violet-500/10
+                            border border-violet-500/20
+                            text-violet-700 dark:text-violet-300
+                            text-sm font-semibold mb-6"
+                        >
+
+                            <span class="relative flex h-2.5 w-2.5">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                            </span>
+
+                            متاحة للمشاريع عن بعد 
+                        </div>
+
+
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
+                            font-extrabold leading-[1.2]"
+                        >
+                            متخصصة في
+
+                            <span
+                                id="typingText"
+                                class="gradient-text block mt-2"
+                            >
+                                التقنية
+                            </span>
+                        </h1>
+
+
+                        <h2 class="mt-5 text-xl sm:text-2xl font-bold">
+                            حماس   رسام
+                        </h2>
+
+
+                        <p
+                            class="mt-6 text-base sm:text-lg
+                            text-slate-600 dark:text-slate-300
+                            leading-8 max-w-2xl"
+                        >
+                            متخصصة في تقنية المعلومات والتصميم والإبداع الرقمي،
+                            أعمل على تحويل الأفكار إلى تجارب رقمية عصرية
+                            تجمع بين التقنية، التصميم، والابتكار.
+                        </p>
+
+
+                        <!-- Hero Buttons -->
+                        <div class="flex flex-wrap gap-3 mt-8">
+
+                            <a
+                                href="#contact"
+                                class="px-6 py-3.5 rounded-xl
+                                bg-gradient-to-r from-violet-600 to-pink-500
+                                text-white font-bold
+                                shadow-lg shadow-violet-500/20
+                                hover:-translate-y-1 transition"
+                            >
+                                تواصل معي
+                            </a>
+
+                            <a
+                                href="#projects"
+                                class="px-6 py-3.5 rounded-xl
+                                glass font-bold
+                                hover:-translate-y-1 transition"
+                            >
+                                استكشف أعمالي
+                            </a>
+
+                        </div>
+
+
+                        <!-- Stats -->
+                        <div class="grid grid-cols-3 gap-3 mt-10 max-w-xl">
+
+                            <div class="glass rounded-2xl p-4 text-center">
+                                <div
+                                    class="text-2xl sm:text-3xl font-extrabold gradient-text"
+                                    data-counter="2"
+                                >
+                                    0
+                                </div>
+
+                                <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                                    سنوات خبرة
+                                </div>
+                            </div>
+
+
+                            <div class="glass rounded-2xl p-4 text-center">
+                                <div
+                                    class="text-2xl sm:text-3xl font-extrabold gradient-text"
+                                    data-counter="2024"
+                                >
+                                    0
+                                </div>
+
+                                <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                                    سنة التخرج
+                                </div>
+                            </div>
+
+
+                            <div class="glass rounded-2xl p-4 text-center">
+                                <div
+                                    class="text-2xl sm:text-3xl font-extrabold gradient-text"
+                                    data-counter="6"
+                                >
+                                    0
+                                </div>
+
+                                <div class="text-xs sm:text-sm text-slate-500 mt-1">
+                                    مجالات رئيسية
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hero Visual -->
+                    <div class="reveal relative">
+
+                        <div class="relative max-w-lg mx-auto">
+
+                            <!-- Glow -->
+                            <div
+                                class="absolute inset-10
+                                bg-gradient-to-br
+                                from-violet-600/25
+                                via-pink-500/20
+                                to-indigo-500/20
+                                blur-3xl rounded-full"
+                            ></div>
+
+
+                            <!-- Main Card -->
+                            <div
+                                class="relative aspect-square rounded-[3rem]
+                                bg-gradient-to-br
+                                from-violet-600
+                                via-fuchsia-500
+                                to-indigo-600
+                                p-[1px] shadow-2xl"
+                            >
+
+                                <div
+                                    class="w-full h-full rounded-[3rem]
+                                    bg-white/10 dark:bg-slate-950/30
+                                    backdrop-blur-xl
+                                    flex items-center justify-center
+                                    overflow-hidden"
+                                >
+
+                                    <div
+                                        class="w-52 h-52 sm:w-64 sm:h-64
+                                        rounded-[4rem]
+                                        bg-white/15
+                                        border border-white/30
+                                        backdrop-blur-xl
+                                        flex items-center justify-center
+                                        shadow-2xl
+                                        animate-float"
+                                    >
+                                        <span
+                                            class="text-9xl sm:text-[11rem]
+                                            font-extrabold text-white"
+                                        >
+                                          H
+                                        </span>
+                                    </div>
+
+
+                                    <!-- Floating Card -->
+                                    <div
+                                        class="absolute top-8 right-6
+                                        glass rounded-2xl p-3
+                                        text-slate-800 dark:text-white
+                                        shadow-xl animate-float"
+                                        style="animation-delay:.5s"
+                                    >
+                                        <div class="flex items-center gap-2">
+
+                                            <div
+                                                class="w-9 h-9 rounded-xl
+                                                bg-violet-500/15
+                                                text-violet-600
+                                                flex items-center justify-center"
+                                            >
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M12 2 3 7l9 5 9-5-9-5Z"/>
+                                                    <path d="m3 12 9 5 9-5"/>
+                                                    <path d="m3 17 9 5 9-5"/>
+                                                </svg>
+                                            </div>
+
+                                            <span class="text-sm font-bold">
+                                                Technology
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div
+                                        class="absolute bottom-10 left-5
+                                        glass rounded-2xl p-3
+                                        text-slate-800 dark:text-white
+                                        shadow-xl animate-float"
+                                        style="animation-delay:1s"
+                                    >
+                                        <div class="flex items-center gap-2">
+
+                                            <div
+                                                class="w-9 h-9 rounded-xl
+                                                bg-pink-500/15
+                                                text-pink-600
+                                                flex items-center justify-center"
+                                            >
+                                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M12 3v18"/>
+                                                    <path d="M3 12h18"/>
+                                                    <circle cx="12" cy="12" r="9"/>
+                                                </svg>
+                                            </div>
+
+                                            <span class="text-sm font-bold">
+                                                Creative
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div
+                                        class="absolute bottom-8 right-7
+                                        glass rounded-2xl px-4 py-2
+                                        shadow-xl animate-float"
+                                        style="animation-delay:1.5s"
+                                    >
+                                        <span class="text-xs font-bold">
+                                            AI + Design
+                                        </span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section
+            id="about"
+            class="py-24 sm:py-32"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-2xl mx-auto reveal">
+
+                    <span class="text-violet-600 font-bold text-sm">
+                        نبذة عني
+                    </span>
+
+                    <h2
+                        class="text-3xl sm:text-4xl lg:text-5xl
+                        font-extrabold mt-3"
+                    >
+                        التقنية عندما تلتقي
+                        <span class="gradient-text">
+                            بالإبداع
+                        </span>
+                    </h2>
+
+                    <p class="mt-5 text-slate-500 dark:text-slate-400 leading-8">
+                        أسعى دائمًا إلى الجمع بين التفكير التقني والحس الإبداعي
+                        لبناء حلول رقمية ذات قيمة حقيقية.
+                    </p>
+
+                </div>
+
+
+                <div class="grid lg:grid-cols-3 gap-6 mt-14">
+
+                    <div
+                        class="lg:col-span-2 glass rounded-3xl p-7 sm:p-9 reveal"
+                    >
+
+                        <div class="flex items-start gap-5">
+
+                            <div
+                                class="w-14 h-14 rounded-2xl
+                                bg-violet-500/10
+                                text-violet-600
+                                flex items-center justify-center shrink-0"
+                            >
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2 2 7l10 5 10-5-10-5Z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+
+                            <div>
+
+                                <h3 class="text-xl font-extrabold">
+                                    متخصصـة تقنية معلومات
+                                </h3>
+
+                                <p
+                                    class="mt-4 leading-8
+                                    text-slate-600 dark:text-slate-300"
+                                >
+                                    حاصلة على درجة البكالوريوس في تقنية المعلومات
+                                    من جامعة صنعاء – كلية الحاسوب وتقنية المعلومات.
+                                    لدي اهتمام بتطوير المواقع، التصميم الجرافيكي،
+                                    إنتاج الفيديو، المشاريع والبحوث الأكاديمية،
+                                    إضافة إلى توظيف أدوات الذكاء الاصطناعي في العمل
+                                    الإبداعي والتقني.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="glass rounded-3xl p-7 reveal"
+                    >
+
+                        <h3 class="font-extrabold text-xl">
+                            ماذا أقدم؟
+                        </h3>
+
+                        <div class="space-y-4 mt-6">
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>حلول تقنية رقمية</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>تصاميم إبداعية</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>تطوير مواقع</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>إنتاج فيديو</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>مشاريع وبحوث</span>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <span class="text-violet-600">✓</span>
+                                <span>استخدام الذكاء الاصطناعي</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section
+            id="skills"
+            class="py-24 sm:py-32 bg-slate-50/70 dark:bg-slate-900/40"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 reveal">
+
+                    <div>
+
+                        <span class="text-violet-600 font-bold text-sm">
+                            المهارات
+                        </span>
+
+                        <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                            مجموعة مهارات
+                            <span class="gradient-text">
+                                متنوعة
+                            </span>
+                        </h2>
+
+                    </div>
+
+                    <p class="max-w-xl text-slate-500 dark:text-slate-400 leading-8">
+                        مزيج من المهارات التقنية والإبداعية التي يمكن توظيفها
+                        في مشاريع مختلفة.
+                    </p>
+
+                </div>
+
+
+                <div
+                    id="skillsGrid"
+                    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+
+        <section
+            id="projects"
+            class="py-24 sm:py-32"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-2xl mx-auto reveal">
+
+                    <span class="text-violet-600 font-bold text-sm">
+                        معرض الأعمال
+                    </span>
+
+                    <h2
+                        class="text-3xl sm:text-4xl lg:text-5xl
+                        font-extrabold mt-3"
+                    >
+                        مشاريع و
+                        <span class="gradient-text">
+                            نماذج أعمال
+                        </span>
+                    </h2>
+
+                    <p class="mt-5 text-slate-500 dark:text-slate-400">
+                        يمكنك تصفية الأعمال حسب المجال واستعراض تفاصيل كل مشروع.
+                    </p>
+
+                </div>
+
+
+                <!-- Filters -->
+                <div
+                    id="projectFilters"
+                    class="flex flex-wrap justify-center gap-2 mt-10"
+                >
+
+                    <button
+                        data-filter="all"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-violet-600 text-white font-semibold text-sm"
+                    >
+                        الكل
+                    </button>
+
+                    <button
+                        data-filter="web"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-slate-100 dark:bg-slate-800
+                        font-semibold text-sm"
+                    >
+                        مواقع
+                    </button>
+
+                    <button
+                        data-filter="design"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-slate-100 dark:bg-slate-800
+                        font-semibold text-sm"
+                    >
+                        تصميم
+                    </button>
+
+                    <button
+                        data-filter="video"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-slate-100 dark:bg-slate-800
+                        font-semibold text-sm"
+                    >
+                        فيديو
+                    </button>
+
+                    <button
+                        data-filter="academic"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-slate-100 dark:bg-slate-800
+                        font-semibold text-sm"
+                    >
+                        أكاديمي
+                    </button>
+
+                    <button
+                        data-filter="ai"
+                        class="filter-btn px-5 py-2.5 rounded-full
+                        bg-slate-100 dark:bg-slate-800
+                        font-semibold text-sm"
+                    >
+                        ذكاء اصطناعي
+                    </button>
+
+                </div>
+
+
+                <!-- Projects -->
+                <div
+                    id="projectsGrid"
+                    class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section
+            id="education"
+            class="py-24 sm:py-32 bg-slate-50/70 dark:bg-slate-900/40"
+        >
+
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center reveal">
+
+                    <span class="text-violet-600 font-bold text-sm">
+                        التعليم والتدريب
+                    </span>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                        رحلة التعلم
+                    </h2>
+
+                </div>
+
+
+                <div class="relative mt-14">
+
+                    <div
+                        class="absolute right-5 sm:right-1/2 top-0 bottom-0
+                        w-px bg-gradient-to-b
+                        from-violet-500
+                        via-pink-500
+                        to-transparent"
+                    ></div>
+
+
+                    <div class="space-y-12">
+
+                        <div class="relative reveal">
+
+                            <div
+                                class="absolute right-2 sm:right-1/2
+                                translate-x-1/2
+                                w-6 h-6 rounded-full
+                                bg-violet-600 border-4
+                                border-white dark:border-slate-900
+                                shadow-lg"
+                            ></div>
+
+                            <div
+                                class="sm:w-[46%]
+                                mr-12 sm:mr-0
+                                glass rounded-3xl p-6"
+                            >
+
+                                <span class="text-sm text-violet-600 font-bold">
+                                    2024
+                                </span>
+
+                                <h3 class="font-extrabold text-lg mt-2">
+                                    بكالوريوس تقنية المعلومات
+                                </h3>
+
+                                <p class="text-sm text-slate-500 mt-2">
+                                    جامعة صنعاء – كلية الحاسوب وتقنية المعلومات
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="relative reveal">
+
+                            <div
+                                class="absolute right-2 sm:right-1/2
+                                translate-x-1/2
+                                w-6 h-6 rounded-full
+                                bg-pink-500 border-4
+                                border-white dark:border-slate-900
+                                shadow-lg"
+                            ></div>
+
+                            <div
+                                class="sm:w-[46%]
+                                sm:mr-auto
+                                mr-12
+                                glass rounded-3xl p-6"
+                            >
+
+                                <span class="text-sm text-pink-600 font-bold">
+                                    تدريب
+                                </span>
+
+                                <h3 class="font-extrabold text-lg mt-2">
+                                    الذكاء الاصطناعي التوليدي
+                                </h3>
+
+                                <p class="text-sm text-slate-500 mt-2">
+                                    Beam Masters
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="relative reveal">
+
+                            <div
+                                class="absolute right-2 sm:right-1/2
+                                translate-x-1/2
+                                w-6 h-6 rounded-full
+                                bg-indigo-500 border-4
+                                border-white dark:border-slate-900
+                                shadow-lg"
+                            ></div>
+
+                            <div
+                                class="sm:w-[46%]
+                                mr-12 sm:mr-0
+                                glass rounded-3xl p-6"
+                            >
+
+                                <span class="text-sm text-indigo-600 font-bold">
+                                    تدريب
+                                </span>
+
+                                <h3 class="font-extrabold text-lg mt-2">
+                                    التسويق الرقمي
+                                </h3>
+
+                                <p class="text-sm text-slate-500 mt-2">
+                                    Beam Masters
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVICES ================= -->
+
+        <section
+            id="services"
+            class="py-24 sm:py-32"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center max-w-2xl mx-auto reveal">
+
+                    <span class="text-violet-600 font-bold text-sm">
+                        الخدمات
+                    </span>
+
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">
+                        كيف يمكنني
+                        <span class="gradient-text">
+                            مساعدتك؟
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div
+                    id="servicesGrid"
+                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section
+            id="contact"
+            class="py-24 sm:py-32 bg-slate-50/70 dark:bg-slate-900/40"
+        >
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-10">
+
+                    <!-- Contact Info -->
+                    <div class="reveal">
+
+                        <span class="text-violet-600 font-bold text-sm">
+                            تواصل معي
+                        </span>
+
+                        <h2
+                            class="text-3xl sm:text-4xl lg:text-5xl
+                            font-extrabold mt-3"
+                        >
+                            لديك فكرة؟
+                            <span class="gradient-text">
+                                لنجعلها واقعًا
+                            </span>
+                        </h2>
+
+                        <p
+                            class="mt-5 text-slate-500 dark:text-slate-400
+                            leading-8 max-w-xl"
+                        >
+                            سواء كان لديك مشروع تقني، تصميم، محتوى، بحث أكاديمي
+                            أو فكرة إبداعية، يمكنك التواصل معي مباشرة.
+                        </p>
+
+
+                        <div class="space-y-4 mt-8">
+
+                            <!-- Instagram -->
+                            <a
+                                href="https://www.instagram.com/engazprofessional/"
+                                target="_blank"
+                                rel="noopener"
+                                class="glass rounded-2xl p-4 flex items-center gap-4
+                                hover:-translate-y-1 transition"
+                            >
+
+                                <div
+                                    class="w-12 h-12 rounded-xl
+                                    bg-pink-500/10 text-pink-600
+                                    flex items-center justify-center"
+                                >
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                        <circle cx="12" cy="12" r="4"/>
+                                        <circle cx="17.5" cy="6.5" r="1"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <div class="font-bold">
+                                        Instagram
+                                    </div>
+                                    <div class="text-sm text-slate-500">
+                                        @engazprofessional
+                                    </div>
+                                </div>
+
+                            </a>
+
+
+                            <!-- Facebook -->
+                            <a
+                                href="https://www.facebook.com/engazprofessional"
+                                target="_blank"
+                                rel="noopener"
+                                class="glass rounded-2xl p-4 flex items-center gap-4
+                                hover:-translate-y-1 transition"
+                            >
+
+                                <div
+                                    class="w-12 h-12 rounded-xl
+                                    bg-blue-500/10 text-blue-600
+                                    flex items-center justify-center"
+                                >
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3h2.8v8h3.2Z"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <div class="font-bold">
+                                        Facebook
+                                    </div>
+                                    <div class="text-sm text-slate-500">
+                                        Engaz Professional
+                                    </div>
+                                </div>
+
+                            </a>
+
+
+                            <!-- WhatsApp -->
+                            <button
+                                id="copyWhatsapp"
+                                class="glass rounded-2xl p-4 flex items-center gap-4
+                                hover:-translate-y-1 transition w-full text-right"
+                            >
+
+                                <div
+                                    class="w-12 h-12 rounded-xl
+                                    bg-emerald-500/10 text-emerald-600
+                                    flex items-center justify-center"
+                                >
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.2A8.5 8.5 0 1 1 21 11.5Z"/>
+                                        <path d="M8.5 9.5c.3 1.5 2.5 3.7 4 4 .7.1 1.3-.2 1.8-.8l.5-.6c.2-.2.1-.5-.1-.7l-1.2-.8c-.2-.1-.4-.1-.6.1l-.6.6c-.8-.4-1.4-1-1.8-1.8l.5-.6c.2-.2.2-.4.1-.6l-.8-1.2c-.2-.2-.5-.3-.7-.1l-.6.5c-.5.5-.7 1.2-.5 2Z"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <div class="font-bold">
+                                        WhatsApp
+                                    </div>
+
+                                    <div class="text-sm text-slate-500">
+                                        967778799705
+                                    </div>
+                                </div>
+
+                            </button>
+
+
+                            <!-- Email -->
+                            <button
+                                id="copyEmail"
+                                class="glass rounded-2xl p-4 flex items-center gap-4
+                                hover:-translate-y-1 transition w-full text-right"
+                            >
+
+                                <div
+                                    class="w-12 h-12 rounded-xl
+                                    bg-violet-500/10 text-violet-600
+                                    flex items-center justify-center"
+                                >
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                        <path d="m3 7 9 6 9-6"/>
+                                    </svg>
+                                </div>
+
+                                <div>
+                                    <div class="font-bold">
+                                        البريد الإلكتروني
+                                    </div>
+
+                                    <div class="text-sm text-slate-500">
+                                        engazprofessional@gmail.com
+                                    </div>
+                                </div>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Contact Form -->
+                    <div class="glass rounded-[2rem] p-6 sm:p-8 reveal">
+
+                        <h3 class="text-2xl font-extrabold">
+                            أرسل رسالة
+                        </h3>
+
+                        <p class="text-sm text-slate-500 mt-2">
+                            سيتم تجهيز الرسالة وإرسالها عبر WhatsApp.
+                        </p>
+
+
+                        <form id="contactForm" class="space-y-5 mt-7">
+
+                            <div>
+
+                                <label class="block text-sm font-bold mb-2">
+                                    الاسم
+                                </label>
+
+                                <input
+                                    id="contactName"
+                                    type="text"
+                                    required
+                                    placeholder="اكتب اسمك"
+                                    class="w-full px-4 py-3.5 rounded-xl
+                                    bg-slate-100 dark:bg-slate-800
+                                    border border-transparent
+                                    focus:border-violet-500
+                                    outline-none transition"
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <label class="block text-sm font-bold mb-2">
+                                    البريد الإلكتروني
+                                </label>
+
+                                <input
+                                    id="contactEmail"
+                                    type="email"
+                                    required
+                                    placeholder="example@email.com"
+                                    class="w-full px-4 py-3.5 rounded-xl
+                                    bg-slate-100 dark:bg-slate-800
+                                    border border-transparent
+                                    focus:border-violet-500
+                                    outline-none transition"
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <label class="block text-sm font-bold mb-2">
+                                    نوع المشروع
+                                </label>
+
+                                <select
+                                    id="contactType"
+                                    class="w-full px-4 py-3.5 rounded-xl
+                                    bg-slate-100 dark:bg-slate-800
+                                    border border-transparent
+                                    focus:border-violet-500
+                                    outline-none transition"
+                                >
+                                    <option>موقع إلكتروني</option>
+                                    <option>تصميم</option>
+                                    <option>فيديو</option>
+                                    <option>مشروع أكاديمي</option>
+                                    <option>ذكاء اصطناعي</option>
+                                    <option>أخرى</option>
+                                </select>
+
+                            </div>
+
+
+                            <div>
+
+                                <label class="block text-sm font-bold mb-2">
+                                    الرسالة
+                                </label>
+
+                                <textarea
+                                    id="contactMessage"
+                                    rows="5"
+                                    required
+                                    placeholder="اكتب تفاصيل مشروعك..."
+                                    class="w-full px-4 py-3.5 rounded-xl
+                                    bg-slate-100 dark:bg-slate-800
+                                    border border-transparent
+                                    focus:border-violet-500
+                                    outline-none transition resize-none"
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="w-full py-4 rounded-xl
+                                bg-gradient-to-r
+                                from-violet-600
+                                to-pink-500
+                                text-white font-extrabold
+                                shadow-lg shadow-violet-500/20
+                                hover:-translate-y-1 transition"
+                            >
+                                إرسال عبر WhatsApp
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="border-t border-slate-200 dark:border-slate-800">
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+            py-8 flex flex-col sm:flex-row
+            items-center justify-between gap-4"
+        >
+
+            <div class="text-sm text-slate-500">
+                © <span id="currentYear"></span>
+                حماس عادل أحمد رسام. جميع الحقوق محفوظة.
+            </div>
+
+            <button
+                id="sharePortfolio"
+                class="text-sm font-bold text-violet-600
+                hover:text-pink-500 transition"
+            >
+                مشاركة البورتفوليو
+            </button>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= FLOATING ACTIONS ================= -->
+
+    <div class="fixed bottom-6 left-5 z-40 flex flex-col gap-3">
+
+        <a
+            href="https://wa.me/967778799705"
+            target="_blank"
+            rel="noopener"
+            aria-label="WhatsApp"
+            class="w-12 h-12 rounded-2xl
+            bg-emerald-500 text-white
+            flex items-center justify-center
+            shadow-xl hover:-translate-y-1 transition"
+        >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l2.1-5.2A8.5 8.5 0 1 1 21 11.5Z"/>
+                <path d="M8.5 9.5c.3 1.5 2.5 3.7 4 4 .7.1 1.3-.2 1.8-.8l.5-.6c.2-.2.1-.5-.1-.7l-1.2-.8c-.2-.1-.4-.1-.6.1l-.6.6c-.8-.4-1.4-1-1.8-1.8l.5-.6c.2-.2.2-.4.1-.6l-.8-1.2c-.2-.2-.5-.3-.7-.1l-.6.5c-.5.5-.7 1.2-.5 2Z"/>
+            </svg>
+        </a>
+
+
+        <button
+            id="topButton"
+            aria-label="العودة للأعلى"
+            class="hidden w-12 h-12 rounded-2xl
+            bg-slate-900 dark:bg-white
+            text-white dark:text-slate-900
+            items-center justify-center
+            shadow-xl hover:-translate-y-1 transition"
+        >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m18 15-6-6-6 6"/>
+            </svg>
+        </button>
+
+    </div>
+
+
+    <!-- ================= PROJECT MODAL ================= -->
+
+    <div
+        id="projectModal"
+        class="modal fixed inset-0 z-[80]
+        bg-slate-950/70 backdrop-blur-md
+        flex items-center justify-center p-4"
+    >
+
+        <div
+            class="modal-panel w-full max-w-2xl
+            glass rounded-[2rem] p-6 sm:p-8
+            max-h-[90vh] overflow-y-auto"
+        >
+
+            <div class="flex items-center justify-between gap-4">
+
+                <div>
+                    <span
+                        id="modalProjectCategory"
+                        class="text-sm text-violet-600 font-bold"
+                    ></span>
+
+                    <h3
+                        id="modalProjectTitle"
+                        class="text-2xl sm:text-3xl font-extrabold mt-2"
+                    ></h3>
+                </div>
+
+                <button
+                    data-close-modal="projectModal"
+                    class="w-10 h-10 rounded-xl
+                    bg-slate-100 dark:bg-slate-800
+                    flex items-center justify-center"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div
+                id="modalProjectVisual"
+                class="h-48 rounded-3xl mt-6
+                bg-gradient-to-br
+                from-violet-600/20
+                via-pink-500/10
+                to-indigo-600/20
+                flex items-center justify-center"
+            ></div>
+
+
+            <p
+                id="modalProjectDescription"
+                class="leading-8 text-slate-600 dark:text-slate-300 mt-6"
+            ></p>
+
+
+            <div class="mt-6">
+
+                <h4 class="font-extrabold">
+                    الأدوات والتقنيات
+                </h4>
+
+                <div
+                    id="modalProjectTools"
+                    class="flex flex-wrap gap-2 mt-3"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SERVICE MODAL ================= -->
+
+    <div
+        id="serviceModal"
+        class="modal fixed inset-0 z-[80]
+        bg-slate-950/70 backdrop-blur-md
+        flex items-center justify-center p-4"
+    >
+
+        <div
+            class="modal-panel w-full max-w-xl
+            glass rounded-[2rem] p-7"
+        >
+
+            <div class="flex items-center justify-between">
+
+                <div>
+
+                    <span class="text-violet-600 text-sm font-bold">
+                        تفاصيل الخدمة
+                    </span>
+
+                    <h3
+                        id="modalServiceTitle"
+                        class="text-2xl font-extrabold mt-2"
+                    ></h3>
+
+                </div>
+
+                <button
+                    data-close-modal="serviceModal"
+                    class="w-10 h-10 rounded-xl
+                    bg-slate-100 dark:bg-slate-800"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <p
+                id="modalServiceDescription"
+                class="mt-6 leading-8 text-slate-600 dark:text-slate-300"
+            ></p>
+
+
+            <div class="mt-6">
+
+                <h4 class="font-extrabold">
+                    ما الذي تتضمنه؟
+                </h4>
+
+                <ul
+                    id="modalServiceItems"
+                    class="mt-4 space-y-3 text-sm text-slate-600 dark:text-slate-300"
+                ></ul>
+
+            </div>
+
+
+            <a
+                href="#contact"
+                data-close-modal="serviceModal"
+                class="block text-center mt-7
+                py-3.5 rounded-xl
+                bg-gradient-to-r
+                from-violet-600 to-pink-500
+                text-white font-bold"
+            >
+                اطلب هذه الخدمة
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= COMMAND PALETTE ================= -->
+
+    <div
+        id="commandModal"
+        class="modal fixed inset-0 z-[90]
+        bg-slate-950/70 backdrop-blur-md
+        flex items-start justify-center
+        pt-[15vh] px-4"
+    >
+
+        <div
+            class="modal-panel w-full max-w-xl
+            glass rounded-3xl overflow-hidden shadow-2xl"
+        >
+
+            <div class="p-4 border-b border-slate-200 dark:border-slate-800">
+
+                <div class="flex items-center gap-3">
+
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="7"/>
+                        <path d="m20 20-3.5-3.5"/>
+                    </svg>
+
+                    <input
+                        id="commandInput"
+                        type="text"
+                        placeholder="ابحث في البورتفوليو..."
+                        class="bg-transparent outline-none flex-1"
+                    >
+
+                    <kbd
+                        class="text-xs px-2 py-1 rounded
+                        bg-slate-100 dark:bg-slate-800"
+                    >
+                        ESC
+                    </kbd>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="commandItems"
+                class="p-2 max-h-[55vh] overflow-y-auto"
+            >
+
+                <a
+                    href="#home"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    الرئيسية
+                </a>
+
+                <a
+                    href="#about"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    نبذة عني
+                </a>
+
+                <a
+                    href="#skills"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    المهارات
+                </a>
+
+                <a
+                    href="#projects"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    المشاريع
+                </a>
+
+                <a
+                    href="#services"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    الخدمات
+                </a>
+
+                <a
+                    href="#contact"
+                    class="command-item flex items-center gap-3 p-3 rounded-xl"
+                >
+                    تواصل معي
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div
+        id="toast"
+        class="toast fixed bottom-6 right-1/2
+        translate-x-1/2 z-[100]
+        glass rounded-2xl px-5 py-3
+        shadow-2xl flex items-center gap-3"
+    >
+
+        <span
+            id="toastIcon"
+            class="w-7 h-7 rounded-full
+            bg-emerald-500/10 text-emerald-600
+            flex items-center justify-center"
+        >
+            ✓
+        </span>
+
+        <span
+            id="toastMessage"
+            class="text-sm font-bold"
+        >
+            تم التنفيذ
+        </span>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

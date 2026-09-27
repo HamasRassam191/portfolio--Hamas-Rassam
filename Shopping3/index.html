@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="متجري - متجر إلكتروني لبيع أفضل المنتجات بأفضل الأسعار">
+
+    <title>متجري | تجربة تسوق فريدة</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+
+            <!-- Logo -->
+
+            <a href="#home" class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+                <div class="logo-text">
+
+                    <strong>متجري</strong>
+
+                    <small>
+                        تجربة تسوق فريدة
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="nav-links">
+
+                <a href="#home" class="active">
+                    الرئيسية
+                </a>
+
+                <a href="#products">
+                    المنتجات
+                </a>
+
+                <a href="#offers">
+                    العروض
+                </a>
+
+                <a href="#about">
+                    من نحن
+                </a>
+
+                <a href="#contact">
+                    تواصل معنا
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+
+            <div class="nav-actions">
+
+                <button class="icon-btn"
+                        title="البحث"
+                        onclick="openSearch()">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+
+                <button class="icon-btn cart-btn"
+                        title="سلة التسوق"
+                        onclick="openCart()">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span class="cart-count"
+                          id="cartCount">
+                        0
+                    </span>
+
+                </button>
+
+
+                <!-- Mobile Menu -->
+
+                <button class="menu-btn"
+                        onclick="toggleMenu()">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#home">
+                الرئيسية
+            </a>
+
+            <a href="#products">
+                المنتجات
+            </a>
+
+            <a href="#offers">
+                العروض
+            </a>
+
+            <a href="#about">
+                من نحن
+            </a>
+
+            <a href="#contact">
+                تواصل معنا
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+
+        <div class="hero-overlay"></div>
+
+
+        <div class="container hero-content">
+
+
+            <div class="hero-text">
+
+                <!-- <span class="hero-label">
+
+                    مرحبًا بك في متجري
+
+                </span> -->
+
+
+                <h1>
+
+                    اشتري أفضل المنتجات
+
+                    <span>
+                        بأفضل الأسعار
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    اكتشف مجموعة واسعة من المنتجات عالية الجودة
+                    المختارة بعناية لتلبية احتياجاتك اليومية.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#products"
+                       class="btn primary-btn">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                        تسوق الآن
+
+                    </a>
+
+
+                    <a href="#offers"
+                       class="btn secondary-btn">
+
+                        اكتشف العروض
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Statistics -->
+
+                <div class="hero-stats">
+
+                    <div>
+
+                        <strong>
+                            +500
+                        </strong>
+
+                        <span>
+                            منتج
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            +1000
+                        </strong>
+
+                        <span>
+                            عميل
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            100%
+                        </strong>
+
+                        <span>
+                            جودة
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <section class="features-section">
+
+        <div class="container features-grid">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        شحن سريع
+                    </h3>
+
+                    <p>
+                        توصيل سريع وآمن
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        دفع آمن
+                    </h3>
+
+                    <p>
+                        معاملات آمنة ومحمية
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        دعم 24/7
+                    </h3>
+
+                    <p>
+                        خدمة عملاء مميزة
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+
+                    <i class="fa-solid fa-medal"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        جودة مضمونة
+                    </h3>
+
+                    <p>
+                        منتجات أصلية 100%
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRODUCTS
+    ========================== -->
+
+    <section class="products-section"
+             id="products">
+
+        <div class="container">
+
+
+            <div class="section-header">
+
+                <span>
+                    منتجاتنا
+                </span>
+
+                <h2>
+                    أحدث المنتجات
+                </h2>
+
+                <p>
+                    اختر ما يناسبك من مجموعتنا المميزة
+                </p>
+
+            </div>
+
+
+            <!-- Products -->
+
+            <div class="products-grid">
+
+
+                <!-- Product 1 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge">
+                            جديد
+                        </span>
+
+                        <img src="images/product1.png"
+                             alt="ساعة ذكية">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('ساعة ذكية')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            إكسسوارات
+                        </span>
+
+                        <h3>
+                            ساعة ذكية
+                        </h3>
+
+                        <p>
+                            ساعة ذكية بتصميم عصري
+                            ومميزات متعددة لمتابعة نشاطك اليومي.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <div>
+
+                                <span class="old-price">
+                                    $59.99
+                                </span>
+
+                                <strong>
+                                    $49.99
+                                </strong>
+
+                            </div>
+
+
+                            <button class="add-cart"
+                                    onclick="addToCart('ساعة ذكية', 49.99)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Product 2 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge">
+                            الأكثر مبيعًا
+                        </span>
+
+                        <img src="images/product2.png"
+                             alt="سماعات لاسلكية">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('سماعات لاسلكية')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            إلكترونيات
+                        </span>
+
+                        <h3>
+                            سماعات لاسلكية
+                        </h3>
+
+                        <p>
+                            صوت نقي وتصميم مريح مع
+                            بطارية تدوم لساعات طويلة.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $35.99
+                            </strong>
+
+                            <button class="add-cart"
+                                    onclick="addToCart('سماعات لاسلكية', 35.99)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Product 3 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge discount">
+                            خصم 20%
+                        </span>
+
+                        <img src="images/product3.png"
+                             alt="حقيبة أنيقة">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('حقيبة أنيقة')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            أزياء
+                        </span>
+
+                        <h3>
+                            حقيبة أنيقة
+                        </h3>
+
+                        <p>
+                            حقيبة عملية وأنيقة مناسبة
+                            للاستخدام اليومي والمناسبات.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $42.50
+                            </strong>
+
+                            <button class="add-cart"
+                                    onclick="addToCart('حقيبة أنيقة', 42.50)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Product 4 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge">
+                            مميز
+                        </span>
+
+                        <img src="images/product4.png"
+                             alt="حذاء رياضي">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('حذاء رياضي')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            أحذية
+                        </span>
+
+                        <h3>
+                            حذاء رياضي
+                        </h3>
+
+                        <p>
+                            حذاء رياضي خفيف ومريح
+                            مناسب للرياضة والاستخدام اليومي.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $59.99
+                            </strong>
+
+                            <button class="add-cart"
+                                    onclick="addToCart('حذاء رياضي', 59.99)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Product 5 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge">
+                            جديد
+                        </span>
+
+                        <img src="images/product5.png"
+                             alt="نظارة شمسية">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('نظارة شمسية')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            إكسسوارات
+                        </span>
+
+                        <h3>
+                            نظارة شمسية
+                        </h3>
+
+                        <p>
+                            نظارة شمسية بتصميم أنيق
+                            وحماية مناسبة للاستخدام اليومي.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $28.99
+                            </strong>
+
+                            <button class="add-cart"
+                                    onclick="addToCart('نظارة شمسية', 28.99)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- Product 6 -->
+
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <span class="product-badge">
+                            عرض خاص
+                        </span>
+
+                        <img src="images/product6.png"
+                             alt="عطر فاخر">
+
+                        <div class="product-overlay">
+
+                            <button
+                                onclick="quickView('عطر فاخر')">
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-info">
+
+                        <span class="category">
+                            عطور
+                        </span>
+
+                        <h3>
+                            عطر فاخر
+                        </h3>
+
+                        <p>
+                            عطر مميز برائحة جذابة وثبات طويل
+                            يناسب مختلف المناسبات.
+                        </p>
+
+
+                        <div class="product-bottom">
+
+                            <strong>
+                                $65.00
+                            </strong>
+
+                            <button class="add-cart"
+                                    onclick="addToCart('عطر فاخر', 65.00)">
+
+                                <i class="fa-solid fa-cart-plus"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         OFFER
+    ========================== -->
+
+    <section class="offer-section"
+             id="offers">
+
+        <div class="container offer-content">
+
+
+            <div class="offer-text">
+
+                <span>
+                    عرض لفترة محدودة
+                </span>
+
+                <h2>
+                    خصم يصل إلى 40%
+                </h2>
+
+                <p>
+                    استفد من عروضنا الحصرية قبل انتهاء الوقت.
+                </p>
+
+            </div>
+
+
+            <a href="#products"
+               class="btn primary-btn">
+
+                تسوق الآن
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="about-section"
+             id="about">
+
+        <div class="container about-content">
+
+
+            <div class="about-title">
+
+                <span>
+                    لماذا نحن؟
+                </span>
+
+                <h2>
+                    تجربة تسوق
+                    <strong>
+                        أسهل وأفضل
+                    </strong>
+                </h2>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <p>
+
+                    نقدم لك مجموعة مختارة من المنتجات عالية الجودة
+                    مع تجربة شراء سهلة وسريعة وخدمة عملاء مميزة.
+
+                </p>
+
+
+                <div class="about-list">
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        منتجات مختارة بعناية
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        أسعار مناسبة ومنافسة
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-check"></i>
+
+                        خدمة عملاء مميزة
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         NEWSLETTER
+    ========================== -->
+
+    <section class="newsletter">
+
+        <div class="container newsletter-content">
+
+            <div>
+
+                <span>
+                    اشترك معنا
+                </span>
+
+                <h2>
+                    لا تفوت أحدث العروض
+                </h2>
+
+                <p>
+                    اشترك في النشرة البريدية ليصلك كل جديد.
+                </p>
+
+            </div>
+
+
+            <form
+                onsubmit="subscribe(event)">
+
+                <input
+                    type="email"
+                    placeholder="أدخل بريدك الإلكتروني"
+                    required>
+
+                <button type="submit">
+
+                    اشتراك
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <div class="container footer-content">
+
+
+            <div class="footer-column">
+
+                <a href="#home"
+                   class="footer-logo">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        متجري
+                    </span>
+
+                </a>
+
+                <p>
+                    تجربة تسوق فريدة تجمع بين
+                    الجودة والسعر المناسب.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    روابط سريعة
+                </h3>
+
+                <a href="#home">
+                    الرئيسية
+                </a>
+
+                <a href="#products">
+                    المنتجات
+                </a>
+
+                <a href="#offers">
+                    العروض
+                </a>
+
+                <a href="#about">
+                    من نحن
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    تواصل معنا
+                </h3>
+
+                <a href="tel:+967000000000">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +967 000 000 000
+
+                </a>
+
+                <a href="mailto:info@matjari.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    info@matjari.com
+
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>
+                    تابعنا
+                </h3>
+
+                <div class="social-links">
+
+                    <a href="#"
+                       title="Facebook">
+
+                        <i class="fa-brands fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="#"
+                       title="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+                    <a href="#"
+                       title="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 متجري. جميع الحقوق محفوظة.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SEARCH MODAL
+    ========================== -->
+
+    <div class="modal"
+         id="searchModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal"
+                    onclick="closeSearch()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2>
+                البحث في المتجر
+            </h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    placeholder="ابحث عن منتج...">
+
+                <button>
+
+                    <i class="fa-solid fa-search"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         CART MODAL
+    ========================== -->
+
+    <div class="modal"
+         id="cartModal">
+
+        <div class="modal-box cart-modal">
+
+            <button class="close-modal"
+                    onclick="closeCart()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h2>
+                سلة التسوق
+            </h2>
+
+            <div id="cartItems">
+
+                <div class="empty-cart">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <p>
+                        السلة فارغة حاليًا
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let cart = [];
+
+
+        /* Add To Cart */
+
+        function addToCart(name, price) {
+
+            cart.push({
+                name: name,
+                price: price
+            });
+
+
+            document.getElementById("cartCount")
+                .textContent = cart.length;
+
+
+            alert("تمت إضافة " + name + " إلى السلة");
+
+
+            updateCart();
+
+        }
+
+
+        /* Update Cart */
+
+        function updateCart() {
+
+            const container =
+                document.getElementById("cartItems");
+
+
+            if (cart.length === 0) {
+
+                container.innerHTML = `
+
+                    <div class="empty-cart">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <p>
+                            السلة فارغة حاليًا
+                        </p>
+
+                    </div>
+
+                `;
+
+                return;
+            }
+
+
+            let html = "";
+
+            let total = 0;
+
+
+            cart.forEach((item, index) => {
+
+                total += item.price;
+
+                html += `
+
+                    <div class="cart-item">
+
+                        <div>
+
+                            <strong>
+                                ${item.name}
+                            </strong>
+
+                            <span>
+                                $${item.price.toFixed(2)}
+                            </span>
+
+                        </div>
+
+                        <button
+                            onclick="removeItem(${index})">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            html += `
+
+                <div class="cart-total">
+
+                    <strong>
+                        الإجمالي
+                    </strong>
+
+                    <strong>
+                        $${total.toFixed(2)}
+                    </strong>
+
+                </div>
+
+                <button class="checkout-btn">
+
+                    إتمام الطلب
+
+                </button>
+
+            `;
+
+
+            container.innerHTML = html;
+
+        }
+
+
+        /* Remove */
+
+        function removeItem(index) {
+
+            cart.splice(index, 1);
+
+            document.getElementById("cartCount")
+                .textContent = cart.length;
+
+            updateCart();
+
+        }
+
+
+        /* Search */
+
+        function openSearch() {
+
+            document.getElementById("searchModal")
+                .classList.add("show");
+
+        }
+
+
+        function closeSearch() {
+
+            document.getElementById("searchModal")
+                .classList.remove("show");
+
+        }
+
+
+        /* Cart */
+
+        function openCart() {
+
+            updateCart();
+
+            document.getElementById("cartModal")
+                .classList.add("show");
+
+        }
+
+
+        function closeCart() {
+
+            document.getElementById("cartModal")
+                .classList.remove("show");
+
+        }
+
+
+        /* Quick View */
+
+        function quickView(product) {
+
+            alert(
+                "عرض تفاصيل المنتج: " + product
+            );
+
+        }
+
+
+        /* Mobile Menu */
+
+        function toggleMenu() {
+
+            document.getElementById("mobileMenu")
+                .classList.toggle("show");
+
+        }
+
+
+        /* Newsletter */
+
+        function subscribe(event) {
+
+            event.preventDefault();
+
+            alert(
+                "تم الاشتراك بنجاح، شكرًا لك!"
+            );
+
+            event.target.reset();
+
+        }
+
+
+        /* Close Modal */
+
+        window.onclick = function(event) {
+
+            const search =
+                document.getElementById("searchModal");
+
+            const cartModal =
+                document.getElementById("cartModal");
+
+
+            if (event.target === search) {
+
+                closeSearch();
+
+            }
+
+
+            if (event.target === cartModal) {
+
+                closeCart();
+
+            }
+
+        };
+
+
+    </script>
+
+
+</body>
+
+</html>

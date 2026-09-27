@@ -1,0 +1,1885 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>لوحة التحكم | متجر نوفا</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <div>
+                <h2>نوفا</h2>
+                <span>متجر إلكتروني</span>
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-title">
+            القائمة الرئيسية
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="#" class="menu-link active"
+                onclick="showSection('dashboard', this)">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>لوحة التحكم</span>
+            </a>
+
+            <a href="#" class="menu-link"
+                onclick="showSection('products', this)">
+                <i class="fa-solid fa-box-open"></i>
+                <span>المنتجات</span>
+            </a>
+
+            <a href="#" class="menu-link"
+                onclick="showSection('orders', this)">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>الطلبات</span>
+                <b>12</b>
+            </a>
+
+            <a href="#" class="menu-link"
+                onclick="showSection('customers', this)">
+                <i class="fa-solid fa-users"></i>
+                <span>العملاء</span>
+            </a>
+
+            <a href="#" class="menu-link"
+                onclick="showSection('sales', this)">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>المبيعات</span>
+            </a>
+
+
+            <div class="sidebar-title">
+                المتجر
+            </div>
+
+
+            <a href="#" class="menu-link"
+                onclick="showSection('offers', this)">
+                <i class="fa-solid fa-tag"></i>
+                <span>العروض والخصومات</span>
+            </a>
+
+            <a href="#" class="menu-link"
+                onclick="showSection('banner', this)">
+                <i class="fa-solid fa-image"></i>
+                <span>واجهة المتجر</span>
+            </a>
+
+
+            <div class="sidebar-title">
+                النظام
+            </div>
+
+
+            <a href="#" class="menu-link"
+                onclick="showSection('settings', this)">
+                <i class="fa-solid fa-gear"></i>
+                <span>الإعدادات</span>
+            </a>
+
+        </nav>
+
+
+        <!-- User -->
+
+        <div class="sidebar-user">
+
+            <div class="user-avatar">
+                م
+            </div>
+
+            <div class="user-info">
+
+                <strong>مدير المتجر</strong>
+
+                <span>Administrator</span>
+
+            </div>
+
+            <button>
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button class="mobile-menu"
+                    onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+
+                    <h1 id="page-title">
+                        لوحة التحكم
+                    </h1>
+
+                    <p id="page-description">
+                        نظرة عامة على أداء متجرك اليوم
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="ابحث عن أي شيء...">
+
+                    <span>⌘ K</span>
+
+                </div>
+
+
+                <button class="icon-button notification">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <small>3</small>
+
+                </button>
+
+
+                <a href="index.html"
+                    class="store-button">
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    المتجر
+
+                </a>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section id="dashboard" class="section active">
+
+
+                <!-- Welcome -->
+
+                <div class="welcome">
+
+                    <div>
+
+                        <span>
+                            الإثنين، 7 سبتمبر 2026
+                        </span>
+
+                        <h2>
+                            مرحبًا بك مجددًا 👋
+                        </h2>
+
+                        <p>
+                            إليك ملخص أداء متجرك لهذا اليوم.
+                        </p>
+
+                    </div>
+
+                    <button class="export-btn">
+
+                        <i class="fa-solid fa-download"></i>
+
+                        تصدير التقرير
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- STATISTICS -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon purple">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+
+                            <span class="growth positive">
+                                +12.8%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            إجمالي المبيعات
+                        </span>
+
+                        <h2>
+                            $24,580
+                        </h2>
+
+                        <p>
+                            مقارنة بالشهر الماضي
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon blue">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+
+                            <span class="growth positive">
+                                +8.4%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            إجمالي الطلبات
+                        </span>
+
+                        <h2>
+                            1,284
+                        </h2>
+
+                        <p>
+                            مقارنة بالشهر الماضي
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon green">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+
+                            <span class="growth positive">
+                                +15.2%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            العملاء
+                        </span>
+
+                        <h2>
+                            8,549
+                        </h2>
+
+                        <p>
+                            عميل مسجل
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+
+                            <div class="stat-icon orange">
+                                <i class="fa-solid fa-box"></i>
+                            </div>
+
+                            <span class="growth negative">
+                                -2.4%
+                            </span>
+
+                        </div>
+
+                        <span class="stat-label">
+                            المنتجات
+                        </span>
+
+                        <h2>
+                            356
+                        </h2>
+
+                        <p>
+                            منتج في المتجر
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHART + ORDERS -->
+
+                <div class="dashboard-row">
+
+
+                    <!-- SALES CHART -->
+
+                    <div class="panel sales-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    تحليل المبيعات
+                                </h3>
+
+                                <p>
+                                    إجمالي المبيعات خلال الفترة
+                                </p>
+
+                            </div>
+
+                            <select>
+
+                                <option>
+                                    آخر 7 أيام
+                                </option>
+
+                                <option>
+                                    آخر 30 يوم
+                                </option>
+
+                                <option>
+                                    آخر 6 أشهر
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="chart-wrapper">
+
+                            <div class="chart-values">
+
+                                <span>$10k</span>
+                                <span>$8k</span>
+                                <span>$6k</span>
+                                <span>$4k</span>
+                                <span>$2k</span>
+                                <span>$0</span>
+
+                            </div>
+
+
+                            <div class="chart-area">
+
+                                <div class="grid-line one"></div>
+                                <div class="grid-line two"></div>
+                                <div class="grid-line three"></div>
+                                <div class="grid-line four"></div>
+                                <div class="grid-line five"></div>
+
+
+                                <svg
+                                    viewBox="0 0 700 260"
+                                    preserveAspectRatio="none">
+
+                                    <defs>
+
+                                        <linearGradient
+                                            id="chartGradient"
+                                            x1="0"
+                                            x2="0"
+                                            y1="0"
+                                            y2="1">
+
+                                            <stop
+                                                offset="0%"
+                                                stop-color="#8b5cf6"
+                                                stop-opacity=".25"/>
+
+                                            <stop
+                                                offset="100%"
+                                                stop-color="#8b5cf6"
+                                                stop-opacity="0"/>
+
+                                        </linearGradient>
+
+                                    </defs>
+
+
+                                    <path
+                                        class="area"
+                                        d="M0,190
+                                        C50,170 70,180 100,150
+                                        C130,120 160,145 190,125
+                                        C220,105 240,135 275,110
+                                        C310,85 330,100 360,90
+                                        C400,70 420,100 450,80
+                                        C490,55 510,85 540,65
+                                        C580,45 600,70 630,45
+                                        C655,30 680,45 700,20
+                                        L700,260 L0,260 Z">
+                                    </path>
+
+
+                                    <path
+                                        class="line"
+                                        d="M0,190
+                                        C50,170 70,180 100,150
+                                        C130,120 160,145 190,125
+                                        C220,105 240,135 275,110
+                                        C310,85 330,100 360,90
+                                        C400,70 420,100 450,80
+                                        C490,55 510,85 540,65
+                                        C580,45 600,70 630,45
+                                        C655,30 680,45 700,20">
+                                    </path>
+
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="chart-labels">
+
+                            <span>السبت</span>
+                            <span>الأحد</span>
+                            <span>الإثنين</span>
+                            <span>الثلاثاء</span>
+                            <span>الأربعاء</span>
+                            <span>الخميس</span>
+                            <span>الجمعة</span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- RECENT ORDERS -->
+
+                    <div class="panel orders-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    أحدث الطلبات
+                                </h3>
+
+                                <p>
+                                    آخر عمليات الشراء
+                                </p>
+
+                            </div>
+
+                            <button onclick="showSection('orders')">
+                                عرض الكل
+                            </button>
+
+                        </div>
+
+
+                        <div class="orders-list">
+
+
+                            <div class="order-item">
+
+                                <div class="order-avatar">
+                                    م
+                                </div>
+
+                                <div class="order-details">
+
+                                    <strong>
+                                        محمد أحمد
+                                    </strong>
+
+                                    <span>
+                                        #ORD-1024
+                                    </span>
+
+                                </div>
+
+                                <div class="order-price">
+                                    <strong>$240</strong>
+                                    <span class="completed">
+                                        مكتمل
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="order-item">
+
+                                <div class="order-avatar">
+                                    س
+                                </div>
+
+                                <div class="order-details">
+
+                                    <strong>
+                                        سارة علي
+                                    </strong>
+
+                                    <span>
+                                        #ORD-1023
+                                    </span>
+
+                                </div>
+
+                                <div class="order-price">
+
+                                    <strong>$185</strong>
+
+                                    <span class="pending">
+                                        قيد التجهيز
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="order-item">
+
+                                <div class="order-avatar">
+                                    خ
+                                </div>
+
+                                <div class="order-details">
+
+                                    <strong>
+                                        خالد محمد
+                                    </strong>
+
+                                    <span>
+                                        #ORD-1022
+                                    </span>
+
+                                </div>
+
+                                <div class="order-price">
+
+                                    <strong>$420</strong>
+
+                                    <span class="shipping">
+                                        تم الشحن
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="order-item">
+
+                                <div class="order-avatar">
+                                    ن
+                                </div>
+
+                                <div class="order-details">
+
+                                    <strong>
+                                        نور أحمد
+                                    </strong>
+
+                                    <span>
+                                        #ORD-1021
+                                    </span>
+
+                                </div>
+
+                                <div class="order-price">
+
+                                    <strong>$95</strong>
+
+                                    <span class="completed">
+                                        مكتمل
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="order-item">
+
+                                <div class="order-avatar">
+                                    ع
+                                </div>
+
+                                <div class="order-details">
+
+                                    <strong>
+                                        علي حسن
+                                    </strong>
+
+                                    <span>
+                                        #ORD-1020
+                                    </span>
+
+                                </div>
+
+                                <div class="order-price">
+
+                                    <strong>$310</strong>
+
+                                    <span class="pending">
+                                        قيد التجهيز
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PRODUCTS + QUICK ACTIONS -->
+
+                <div class="dashboard-row bottom-row">
+
+
+                    <!-- BEST PRODUCTS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    المنتجات الأكثر مبيعًا
+                                </h3>
+
+                                <p>
+                                    أداء المنتجات هذا الشهر
+                                </p>
+
+                            </div>
+
+                            <button onclick="showSection('products')">
+                                إدارة المنتجات
+                            </button>
+
+                        </div>
+
+
+                        <div class="best-products">
+
+
+                            <div class="best-product">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <strong>
+                                        ساعة ذكية Pro
+                                    </strong>
+
+                                    <span>
+                                        248 عملية بيع
+                                    </span>
+
+                                </div>
+
+                                <div class="product-sales">
+                                    $12,400
+                                </div>
+
+                            </div>
+
+
+                            <div class="best-product">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-headphones"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <strong>
+                                        سماعات لاسلكية
+                                    </strong>
+
+                                    <span>
+                                        185 عملية بيع
+                                    </span>
+
+                                </div>
+
+                                <div class="product-sales">
+                                    $8,940
+                                </div>
+
+                            </div>
+
+
+                            <div class="best-product">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <strong>
+                                        حقيبة جلدية فاخرة
+                                    </strong>
+
+                                    <span>
+                                        143 عملية بيع
+                                    </span>
+
+                                </div>
+
+                                <div class="product-sales">
+                                    $7,150
+                                </div>
+
+                            </div>
+
+
+                            <div class="best-product">
+
+                                <div class="product-image">
+                                    <i class="fa-solid fa-shoe-prints"></i>
+                                </div>
+
+                                <div class="product-info">
+
+                                    <strong>
+                                        حذاء رياضي
+                                    </strong>
+
+                                    <span>
+                                        126 عملية بيع
+                                    </span>
+
+                                </div>
+
+                                <div class="product-sales">
+                                    $5,780
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- QUICK ACTIONS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    إجراءات سريعة
+                                </h3>
+
+                                <p>
+                                    الوصول السريع للأدوات
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+
+                            <button onclick="showSection('products')">
+
+                                <div class="quick-icon purple">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+
+                                <span>
+                                    إضافة منتج
+                                </span>
+
+                            </button>
+
+
+                            <button onclick="showSection('orders')">
+
+                                <div class="quick-icon blue">
+                                    <i class="fa-solid fa-box"></i>
+                                </div>
+
+                                <span>
+                                    إدارة الطلبات
+                                </span>
+
+                            </button>
+
+
+                            <button onclick="showSection('offers')">
+
+                                <div class="quick-icon orange">
+                                    <i class="fa-solid fa-percent"></i>
+                                </div>
+
+                                <span>
+                                    إنشاء خصم
+                                </span>
+
+                            </button>
+
+
+                            <button onclick="showSection('banner')">
+
+                                <div class="quick-icon green">
+                                    <i class="fa-solid fa-image"></i>
+                                </div>
+
+                                <span>
+                                    تعديل الواجهة
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <section id="products" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>المنتجات</h2>
+
+                        <p>
+                            إدارة جميع منتجات متجرك
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        إضافة منتج
+
+                    </button>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="table-toolbar">
+
+                        <div class="table-search">
+
+                            <i class="fa-solid fa-search"></i>
+
+                            <input
+                                type="text"
+                                placeholder="البحث عن منتج...">
+
+                        </div>
+
+
+                        <select>
+
+                            <option>
+                                جميع التصنيفات
+                            </option>
+
+                            <option>
+                                إلكترونيات
+                            </option>
+
+                            <option>
+                                أزياء
+                            </option>
+
+                            <option>
+                                إكسسوارات
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>المنتج</th>
+                                    <th>التصنيف</th>
+                                    <th>السعر</th>
+                                    <th>المخزون</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="table-product">
+
+                                            <div class="mini-product">
+                                                <i class="fa-solid fa-clock"></i>
+                                            </div>
+
+                                            <strong>
+                                                ساعة ذكية Pro
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        إكسسوارات
+                                    </td>
+
+                                    <td>
+                                        $49.99
+                                    </td>
+
+                                    <td>
+                                        85
+                                    </td>
+
+                                    <td>
+                                        <span class="status success">
+                                            متوفر
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+
+                                        <button class="action delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="table-product">
+
+                                            <div class="mini-product">
+                                                <i class="fa-solid fa-headphones"></i>
+                                            </div>
+
+                                            <strong>
+                                                سماعات لاسلكية
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        إلكترونيات
+                                    </td>
+
+                                    <td>
+                                        $35.99
+                                    </td>
+
+                                    <td>
+                                        42
+                                    </td>
+
+                                    <td>
+                                        <span class="status success">
+                                            متوفر
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+
+                                        <button class="action delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="table-product">
+
+                                            <div class="mini-product">
+                                                <i class="fa-solid fa-bag-shopping"></i>
+                                            </div>
+
+                                            <strong>
+                                                حقيبة جلدية
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        أزياء
+                                    </td>
+
+                                    <td>
+                                        $79.99
+                                    </td>
+
+                                    <td>
+                                        8
+                                    </td>
+
+                                    <td>
+                                        <span class="status warning">
+                                            كمية قليلة
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+
+                                        <button class="action delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+
+                                        <div class="table-product">
+
+                                            <div class="mini-product">
+                                                <i class="fa-solid fa-shoe-prints"></i>
+                                            </div>
+
+                                            <strong>
+                                                حذاء رياضي
+                                            </strong>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        أحذية
+                                    </td>
+
+                                    <td>
+                                        $59.99
+                                    </td>
+
+                                    <td>
+                                        0
+                                    </td>
+
+                                    <td>
+                                        <span class="status danger">
+                                            نفد المخزون
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <button class="action edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+
+                                        <button class="action delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= ORDERS ================= -->
+
+            <section id="orders" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>الطلبات</h2>
+
+                        <p>
+                            متابعة وإدارة طلبات العملاء
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid order-stat-grid">
+
+                    <div class="simple-stat">
+                        <span>إجمالي الطلبات</span>
+                        <strong>1,284</strong>
+                    </div>
+
+                    <div class="simple-stat">
+                        <span>طلبات جديدة</span>
+                        <strong>42</strong>
+                    </div>
+
+                    <div class="simple-stat">
+                        <span>قيد التجهيز</span>
+                        <strong>86</strong>
+                    </div>
+
+                    <div class="simple-stat">
+                        <span>مكتملة</span>
+                        <strong>1,156</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>العميل</th>
+                                    <th>التاريخ</th>
+                                    <th>المبلغ</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراء</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        #ORD-1024
+                                    </td>
+
+                                    <td>
+                                        محمد أحمد
+                                    </td>
+
+                                    <td>
+                                        07 سبتمبر 2026
+                                    </td>
+
+                                    <td>
+                                        $240
+                                    </td>
+
+                                    <td>
+                                        <span class="status success">
+                                            مكتمل
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="view-button">
+                                            عرض التفاصيل
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        #ORD-1023
+                                    </td>
+
+                                    <td>
+                                        سارة علي
+                                    </td>
+
+                                    <td>
+                                        07 سبتمبر 2026
+                                    </td>
+
+                                    <td>
+                                        $185
+                                    </td>
+
+                                    <td>
+                                        <span class="status warning">
+                                            قيد التجهيز
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="view-button">
+                                            عرض التفاصيل
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        #ORD-1022
+                                    </td>
+
+                                    <td>
+                                        خالد محمد
+                                    </td>
+
+                                    <td>
+                                        06 سبتمبر 2026
+                                    </td>
+
+                                    <td>
+                                        $420
+                                    </td>
+
+                                    <td>
+                                        <span class="status info">
+                                            تم الشحن
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="view-button">
+                                            عرض التفاصيل
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= CUSTOMERS ================= -->
+
+            <section id="customers" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>العملاء</h2>
+
+                        <p>
+                            إدارة قاعدة بيانات العملاء
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        <i class="fa-solid fa-user-plus"></i>
+                        إضافة عميل
+                    </button>
+
+                </div>
+
+
+                <div class="customers">
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            م
+                        </div>
+
+                        <h3>محمد أحمد</h3>
+
+                        <span>
+                            mohammed@email.com
+                        </span>
+
+                        <div>
+                            <strong>24</strong>
+                            طلب
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            س
+                        </div>
+
+                        <h3>سارة علي</h3>
+
+                        <span>
+                            sara@email.com
+                        </span>
+
+                        <div>
+                            <strong>18</strong>
+                            طلب
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            خ
+                        </div>
+
+                        <h3>خالد محمد</h3>
+
+                        <span>
+                            khaled@email.com
+                        </span>
+
+                        <div>
+                            <strong>31</strong>
+                            طلب
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            ن
+                        </div>
+
+                        <h3>نور أحمد</h3>
+
+                        <span>
+                            nour@email.com
+                        </span>
+
+                        <div>
+                            <strong>12</strong>
+                            طلب
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SALES ================= -->
+
+            <section id="sales" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>المبيعات</h2>
+
+                        <p>
+                            تحليل أداء المبيعات والإيرادات
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sales-summary">
+
+                    <div>
+                        <span>مبيعات اليوم</span>
+                        <strong>$1,840</strong>
+                    </div>
+
+                    <div>
+                        <span>مبيعات الأسبوع</span>
+                        <strong>$8,420</strong>
+                    </div>
+
+                    <div>
+                        <span>مبيعات الشهر</span>
+                        <strong>$24,580</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="panel large-sales">
+
+                    <h3>
+                        أداء المبيعات
+                    </h3>
+
+                    <div class="sales-bars">
+
+                        <span style="height:40%"></span>
+                        <span style="height:55%"></span>
+                        <span style="height:48%"></span>
+                        <span style="height:70%"></span>
+                        <span style="height:62%"></span>
+                        <span style="height:82%"></span>
+                        <span style="height:92%"></span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= OFFERS ================= -->
+
+            <section id="offers" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>العروض والخصومات</h2>
+
+                        <p>
+                            إدارة الحملات والعروض الخاصة
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button">
+                        <i class="fa-solid fa-plus"></i>
+                        إضافة عرض
+                    </button>
+
+                </div>
+
+
+                <div class="offers">
+
+                    <div class="offer">
+
+                        <div class="offer-icon">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="offer-status">
+                                نشط
+                            </span>
+
+                            <h3>
+                                عروض الصيف
+                            </h3>
+
+                            <p>
+                                خصم يصل إلى 30% على منتجات مختارة
+                            </p>
+
+                            <strong>
+                                خصم 30%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="offer">
+
+                        <div class="offer-icon">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+
+                        <div>
+
+                            <span class="offer-status">
+                                نشط
+                            </span>
+
+                            <h3>
+                                العميل الجديد
+                            </h3>
+
+                            <p>
+                                خصم خاص لأول عملية شراء
+                            </p>
+
+                            <strong>
+                                خصم 20%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= BANNER ================= -->
+
+            <section id="banner" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>واجهة المتجر</h2>
+
+                        <p>
+                            التحكم في المحتوى الظاهر في الصفحة الرئيسية
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="banner-editor">
+
+                    <div class="banner-preview">
+
+                        <div>
+
+                            <span>
+                                عروض حصرية
+                            </span>
+
+                            <h2>
+                                اكتشف مجموعتنا الجديدة
+                            </h2>
+
+                            <p>
+                                منتجات مميزة بأسعار استثنائية
+                            </p>
+
+                            <button>
+                                تسوق الآن
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel banner-form">
+
+                        <label>
+                            عنوان البانر
+                        </label>
+
+                        <input
+                            type="text"
+                            value="اكتشف مجموعتنا الجديدة">
+
+
+                        <label>
+                            وصف البانر
+                        </label>
+
+                        <textarea>منتجات مميزة بأسعار استثنائية</textarea>
+
+
+                        <label>
+                            نص الزر
+                        </label>
+
+                        <input
+                            type="text"
+                            value="تسوق الآن">
+
+
+                        <button class="primary-button">
+                            حفظ التغييرات
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SETTINGS ================= -->
+
+            <section id="settings" class="section">
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>الإعدادات</h2>
+
+                        <p>
+                            إعدادات المتجر والحساب
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel settings">
+
+                    <h3>
+                        معلومات المتجر
+                    </h3>
+
+
+                    <div class="form-grid">
+
+                        <div>
+
+                            <label>
+                                اسم المتجر
+                            </label>
+
+                            <input
+                                type="text"
+                                value="نوفا">
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                البريد الإلكتروني
+                            </label>
+
+                            <input
+                                type="email"
+                                value="info@nova-store.com">
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                رقم الهاتف
+                            </label>
+
+                            <input
+                                type="text"
+                                value="+967 700 000 000">
+
+                        </div>
+
+
+                        <div>
+
+                            <label>
+                                العملة
+                            </label>
+
+                            <select>
+
+                                <option>
+                                    الدولار الأمريكي
+                                </option>
+
+                                <option>
+                                    الريال اليمني
+                                </option>
+
+                                <option>
+                                    الريال السعودي
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="primary-button">
+                        حفظ الإعدادات
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <span>
+                © 2026 Nova Store
+            </span>
+
+            <span>
+                جميع الحقوق محفوظة
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
